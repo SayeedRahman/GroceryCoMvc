@@ -21,13 +21,17 @@ namespace GroceryCoMvc.Models
         [Key]
         public int PricingRuleId { get; set; }
         public int? PromotionId { get; set; }
+        [Required]
         public DateTime? Date { get; set; }
+        [Required]
         public DateTime? ExpDate { get; set; } /* Expiration Data */
         public string Name { get; set; }
         public string Description { get; set; }
         public string Formula { get; set; } /* if applicable, will simply hold the formula*/
         public decimal? FormulaValue { get; set; } /* value produced by the formula */
+        [Required]
         public int? BuyQuantity { get; set; } /* for BuyQuantityGet */
+        [Required]
         public int? DiscountQuantity { get; set; } /* for BuyQuantityGet */
 
         public DiscountRuleEnum? DiscountRuleEnumType { get; set; }
