@@ -1,0 +1,123 @@
+﻿@model GroceryCoMvc.Models.PricingRule
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PricingRule</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ExpDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ExpDate)
+            @Html.ValidationMessageFor(model => model.ExpDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DiscountRuleEnumType, new SelectList(Model.DiscountRuleEnumTypeSelectList, "Text", "Text"), "Select")
+            @Html.ValidationMessageFor(model => model.DiscountRuleEnumType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Formula)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Formula)
+            @Html.ValidationMessageFor(model => model.Formula)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FormulaValue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FormulaValue)
+            @Html.ValidationMessageFor(model => model.FormulaValue)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PromotionId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PromotionId)
+            @Html.ValidationMessageFor(model => model.PromotionId)
+        </div>
+
+				<div class="editor-label">
+            @Html.LabelFor(model => model.BuyQuantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BuyQuantity)
+            @Html.ValidationMessageFor(model => model.BuyQuantity)
+        </div>
+
+				<div class="editor-label">
+            @Html.LabelFor(model => model.DiscountQuantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiscountQuantity)
+            @Html.ValidationMessageFor(model => model.DiscountQuantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DiscountPercent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiscountPercent)
+            @Html.ValidationMessageFor(model => model.DiscountPercent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DiscountedPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiscountedPrice)
+            @Html.ValidationMessageFor(model => model.DiscountedPrice)
+        </div>
+
+				<div class="editor-label">
+            @Html.LabelFor(model => model.DiscountedAmount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DiscountedAmount)
+            @Html.ValidationMessageFor(model => model.DiscountedAmount)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

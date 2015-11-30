@@ -1,0 +1,103 @@
+﻿@model IEnumerable<GroceryCoMvc.Models.PricingRule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @Html.ActionLink("Truncate PricingRules", "Delete")
+</p>
+<table>
+    <tr>
+				<th>
+            @Html.DisplayNameFor(model => model.PricingRuleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Formula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormulaValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PromotionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountPercent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountedPrice)
+        </th>
+				<th>
+            @Html.DisplayNameFor(model => model.DiscountedAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyQuantity)
+        </th>
+				<th>
+            @Html.DisplayNameFor(model => model.DiscountQuantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+				<td>
+            @Html.DisplayFor(modelItem => item.PricingRuleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountRuleEnumType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Formula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FormulaValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PromotionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountPercent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountedPrice)
+        </td>
+				<td>
+            @Html.DisplayFor(modelItem => item.DiscountedAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountQuantity)
+        </td>
+    </tr>
+}
+
+</table>
